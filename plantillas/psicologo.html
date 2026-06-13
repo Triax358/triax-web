@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="es-CL">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Sendero · Psicología</title>
+<meta name="description" content="Acompañamiento psicológico con calma y cercanía. Plantilla de ejemplo creada por Triax." />
+<meta name="robots" content="noindex" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600&family=Nunito+Sans:wght@400;500;600;700&display=swap" rel="stylesheet" />
+<style>
+  :root{
+    --ink:#2C2A24; --sage:#8A9A74; --sage-d:#5F6E4B; --clay:#C5805C; --clay-d:#A9663F;
+    --sand:#EDE6D8; --cream:#FBF7EF; --paper:#fff; --muted:#6E695E; --line:#E3DBCB;
+    --wa:#25D366; --wa-d:#1FAE55;
+    --disp:'Fraunces',Georgia,serif; --body:'Nunito Sans',system-ui,sans-serif;
+    --sh:0 16px 38px rgba(44,42,36,.10);
+  }
+  *{margin:0;padding:0;box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{font-family:var(--body);color:var(--ink);background:var(--cream);line-height:1.7;overflow-x:hidden}
+  a{text-decoration:none;color:inherit}
+  h1,h2,h3{font-family:var(--disp);font-weight:600;line-height:1.12}
+  .wrap{width:100%;max-width:1080px;margin:0 auto;padding:0 26px}
+  .narrow{max-width:760px}
+
+  .demo-bar{background:var(--ink);color:#fff;font-size:.82rem;text-align:center;padding:8px 16px;display:flex;gap:14px;justify-content:center;align-items:center;flex-wrap:wrap}
+  .demo-bar strong{color:var(--sage)}
+  .demo-bar a{background:var(--clay);color:#fff;padding:5px 13px;border-radius:999px;font-weight:700;font-size:.78rem;white-space:nowrap}
+
+  .btn{display:inline-flex;align-items:center;gap:9px;font-family:var(--body);font-weight:700;font-size:.96rem;padding:14px 26px;border-radius:999px;cursor:pointer;border:2px solid transparent;transition:transform .2s,background .2s,box-shadow .2s}
+  .btn:hover{transform:translateY(-2px)}
+  .btn-clay{background:var(--clay);color:#fff;box-shadow:0 12px 26px rgba(197,128,92,.3)}
+  .btn-clay:hover{background:var(--clay-d)}
+  .btn-ghost{background:transparent;color:var(--sage-d);border-color:var(--sage)}
+  .btn-ghost:hover{background:var(--sage);color:#fff}
+  .btn-wa{background:var(--wa);color:#fff}.btn-wa:hover{background:var(--wa-d)}
+  .ico{width:18px;height:18px;fill:currentColor}
+
+  header.nav{position:sticky;top:0;z-index:40;background:rgba(251,247,239,.86);backdrop-filter:blur(12px);border-bottom:1px solid var(--line)}
+  .nav-in{display:flex;align-items:center;justify-content:space-between;height:78px}
+  .logo{font-family:var(--disp);font-weight:600;font-size:1.55rem;color:var(--ink);display:flex;align-items:center;gap:10px}
+  .logo .leaf{width:30px;height:30px;border-radius:50% 50% 50% 0;background:var(--sage);transform:rotate(45deg)}
+  .menu{display:flex;gap:30px;align-items:center}
+  .menu a{font-weight:600;font-size:.95rem;opacity:.82}.menu a:hover{opacity:1;color:var(--sage-d)}
+  .burger{display:none;flex-direction:column;gap:5px;background:none;border:0;cursor:pointer;padding:8px}
+  .burger span{width:24px;height:2.5px;background:var(--ink);border-radius:2px}
+
+  .hero{padding:80px 0 70px;position:relative;overflow:hidden}
+  .hero .blob{position:absolute;border-radius:50%;filter:blur(8px);z-index:0;opacity:.6}
+  .hero .blob.a{width:380px;height:380px;background:radial-gradient(circle,#d7e0c4,transparent 70%);top:-100px;right:-40px}
+  .hero .blob.b{width:300px;height:300px;background:radial-gradient(circle,#f0d6c4,transparent 70%);bottom:-80px;left:-60px}
+  .hero-in{position:relative;z-index:2;display:grid;grid-template-columns:1.1fr .9fr;gap:46px;align-items:center}
+  .eyebrow{font-family:var(--body);font-weight:700;font-size:.8rem;letter-spacing:.12em;text-transform:uppercase;color:var(--clay)}
+  .hero h1{font-size:clamp(2.5rem,5.4vw,4rem);margin:16px 0 0;color:var(--ink)}
+  .hero h1 em{font-style:italic;color:var(--sage-d)}
+  .hero p.lead{font-size:1.16rem;color:var(--muted);margin:22px 0 30px;max-width:42ch}
+  .hero-cta{display:flex;gap:13px;flex-wrap:wrap}
+  .hero-art{position:relative;height:380px;border-radius:50% 50% 46% 54%/60% 56% 44% 40%;background:linear-gradient(160deg,#cdd9b6,#e7d3c2);box-shadow:var(--sh);display:flex;align-items:center;justify-content:center;overflow:hidden}
+  .hero-art svg{width:55%;opacity:.85}
+
+  section.block{padding:90px 0;position:relative}
+  .head{max-width:620px;margin:0 auto 50px;text-align:center}
+  .head h2{font-size:clamp(1.9rem,3.8vw,2.8rem)}
+  .head p{color:var(--muted);margin-top:12px;font-size:1.06rem}
+
+  .areas{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+  .area{background:var(--paper);border:1px solid var(--line);border-radius:22px;padding:28px 26px;transition:transform .2s,box-shadow .2s}
+  .area:hover{transform:translateY(-5px);box-shadow:var(--sh)}
+  .area .ico-w{width:50px;height:50px;border-radius:14px;background:var(--sand);display:flex;align-items:center;justify-content:center;margin-bottom:16px}
+  .area .ico-w svg{width:26px;height:26px;fill:var(--sage-d)}
+  .area h3{font-size:1.3rem;margin-bottom:6px}
+  .area p{color:var(--muted);font-size:.96rem}
+
+  /* PROCESO con camino SVG dibujado al scroll */
+  .proceso{background:var(--sand)}
+  .path-wrap{position:relative;max-width:760px;margin:0 auto}
+  .path-svg{position:absolute;left:50%;top:0;transform:translateX(-50%);height:100%;width:120px;z-index:0;pointer-events:none}
+  .path-svg path{fill:none;stroke:var(--sage);stroke-width:3;stroke-linecap:round;stroke-dasharray:1;stroke-dashoffset:1}
+  .milestones{position:relative;z-index:2;display:flex;flex-direction:column;gap:60px}
+  .ms{display:grid;grid-template-columns:1fr 1fr;gap:30px;align-items:center}
+  .ms .card{background:var(--paper);border:1px solid var(--line);border-radius:20px;padding:26px 28px;box-shadow:var(--sh)}
+  .ms:nth-child(even) .card{order:2}
+  .ms .dot{justify-self:center;width:22px;height:22px;border-radius:50%;background:var(--clay);box-shadow:0 0 0 6px var(--cream),0 0 0 8px var(--sage)}
+  .ms .num{font-family:var(--disp);font-style:italic;color:var(--sage-d);font-size:1.1rem;margin-bottom:6px}
+  .ms h3{font-size:1.3rem;margin-bottom:6px}
+  .ms p{color:var(--muted);font-size:.96rem}
+
+  .about{display:grid;grid-template-columns:.85fr 1.15fr;gap:46px;align-items:center}
+  .about-img{height:420px;border-radius:30px 30px 30px 8px;background:linear-gradient(160deg,#dfe6cf,#ead7c6);box-shadow:var(--sh);display:flex;align-items:center;justify-content:center}
+  .about-img svg{width:45%;opacity:.8}
+  .about h2{font-size:clamp(1.8rem,3.4vw,2.5rem);margin-bottom:16px}
+  .about p{color:var(--muted);margin-bottom:14px}
+  .creds{display:flex;flex-wrap:wrap;gap:10px;margin-top:18px}
+  .creds span{background:var(--sand);border-radius:999px;padding:8px 15px;font-weight:600;font-size:.88rem;color:var(--sage-d)}
+
+  .quotes{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
+  .q{background:var(--paper);border:1px solid var(--line);border-radius:22px;padding:28px}
+  .q p{font-family:var(--disp);font-style:italic;font-size:1.05rem;margin-bottom:12px;line-height:1.4}
+  .q .who{color:var(--clay);font-weight:700;font-size:.9rem}
+
+  .cta{background:linear-gradient(150deg,var(--sage-d),var(--sage));border-radius:34px;padding:64px 30px;text-align:center;color:#fff}
+  .cta h2{color:#fff;font-size:clamp(2rem,4vw,2.9rem)}
+  .cta p{color:rgba(255,255,255,.9);margin:14px 0 26px;font-size:1.08rem}
+
+  footer.foot{background:var(--ink);color:rgba(255,255,255,.72);padding:54px 0 26px;margin-top:90px}
+  .foot-in{display:grid;grid-template-columns:1.5fr 1fr 1fr;gap:34px}
+  .foot .logo{color:#fff;margin-bottom:12px}
+  .foot h4{color:#fff;margin-bottom:12px;font-size:1rem}
+  .foot p{font-size:.92rem;margin-bottom:6px}
+  .foot-bottom{text-align:center;border-top:1px solid rgba(255,255,255,.12);margin-top:34px;padding-top:20px;font-size:.84rem;color:rgba(255,255,255,.55)}
+
+  .wa-float{position:fixed;right:20px;bottom:20px;z-index:50;width:58px;height:58px;border-radius:50%;background:var(--wa);display:flex;align-items:center;justify-content:center;box-shadow:0 8px 24px rgba(37,211,102,.45);transition:transform .2s}
+  .wa-float:hover{transform:scale(1.08)}.wa-float svg{width:32px;height:32px;fill:#fff}
+
+  .reveal{opacity:0;transform:translateY(30px);transition:opacity .8s ease,transform .8s ease}
+  .reveal.in{opacity:1;transform:none}
+
+  @media (max-width:880px){
+    .hero-in,.about{grid-template-columns:1fr}.areas,.quotes{grid-template-columns:1fr}
+    .ms{grid-template-columns:1fr}.ms .dot{display:none}.ms:nth-child(even) .card{order:0}
+    .path-svg{display:none}
+    .menu{display:none}.burger{display:flex}
+    .menu.open{display:flex;position:absolute;top:78px;left:0;right:0;flex-direction:column;background:var(--cream);padding:16px 26px;gap:14px;border-bottom:1px solid var(--line)}
+  }
+  @media (prefers-reduced-motion:reduce){.reveal{opacity:1;transform:none;transition:none}.path-svg path{stroke-dashoffset:0!important}html{scroll-behavior:auto}}
+</style>
+</head>
+<body>
+
+<div class="demo-bar">
+  <span><strong>Diseño de muestra de Triax</strong> · No es una plantilla genérica tipo Wix: tu web se programa a medida, 100% personalizable y optimizada para que Google y la IA la encuentren.</span>
+  <a href="https://api.whatsapp.com/send/?phone=56973539350&text=Hola%2C%20vi%20la%20plantilla%20de%20psicolog%C3%ADa%20y%20quiero%20una%20web%20as%C3%AD" target="_blank" rel="noopener">Quiero una web así</a>
+</div>
+
+<header class="nav">
+  <div class="wrap nav-in">
+    <a href="#" class="logo"><span class="leaf"></span>Sendero</a>
+    <nav class="menu" id="menu">
+      <a href="#areas">Cómo te acompaño</a>
+      <a href="#proceso">El proceso</a>
+      <a href="#sobre">Sobre mí</a>
+      <a href="#contacto">Contacto</a>
+      <a class="btn btn-clay" href="#contacto" style="padding:11px 20px">Agendar sesión</a>
+    </nav>
+    <button class="burger" id="burger" aria-label="Menú"><span></span><span></span><span></span></button>
+  </div>
+</header>
+
+<section class="hero">
+  <div class="blob a"></div><div class="blob b"></div>
+  <div class="wrap hero-in">
+    <div>
+      <span class="eyebrow">Psicología · Adultos y adolescentes</span>
+      <h1>Un espacio seguro para <em>volver a ti</em></h1>
+      <p class="lead">Terapia con calma, sin juicios y a tu ritmo. Un lugar para entender lo que sientes y encontrar tu propio camino.</p>
+      <div class="hero-cta">
+        <a class="btn btn-clay" href="#contacto">Agenda tu primera sesión</a>
+        <a class="btn btn-ghost" href="#sobre">Conóceme</a>
+      </div>
+    </div>
+    <div class="hero-art">
+      <svg viewBox="0 0 24 24" fill="none" stroke="#5F6E4B" stroke-width="1.1"><path d="M12 21c5-3 8-7 8-11a4 4 0 00-8-1 4 4 0 00-8 1c0 4 3 8 8 11z"/><path d="M12 9v8M9 12h6" stroke-width="0.8" opacity=".5"/></svg>
+    </div>
+  </div>
+</section>
+
+<section class="block" id="areas">
+  <div class="wrap">
+    <div class="head reveal"><span class="eyebrow">Cómo te acompaño</span><h2>Temas en los que trabajamos juntos</h2><p>Cada proceso es único. Estos son algunos de los motivos por los que las personas llegan a consulta.</p></div>
+    <div class="areas">
+      <div class="area reveal"><div class="ico-w"><svg viewBox="0 0 24 24"><path d="M12 2a7 7 0 00-7 7c0 5 7 13 7 13s7-8 7-13a7 7 0 00-7-7z"/></svg></div><h3>Ansiedad y estrés</h3><p>Aprender a calmar la mente y recuperar el control del día a día.</p></div>
+      <div class="area reveal"><div class="ico-w"><svg viewBox="0 0 24 24"><path d="M12 21s-7-4.6-9.3-9C1 8 3 4 7 4c2 0 3 1.5 5 3 2-1.5 3-3 5-3 4 0 6 4 4.3 8C19 16.4 12 21 12 21z"/></svg></div><h3>Autoestima</h3><p>Reconstruir la relación contigo y dejar de exigirte de más.</p></div>
+      <div class="area reveal"><div class="ico-w"><svg viewBox="0 0 24 24"><path d="M4 4h16v12H7l-3 3z"/></svg></div><h3>Duelo y pérdidas</h3><p>Transitar el dolor con compañía, a tu propio ritmo.</p></div>
+      <div class="area reveal"><div class="ico-w"><svg viewBox="0 0 24 24"><path d="M16 11a4 4 0 10-8 0M2 21a7 7 0 0120 0"/></svg></div><h3>Relaciones</h3><p>Vínculos más sanos contigo y con quienes te rodean.</p></div>
+      <div class="area reveal"><div class="ico-w"><svg viewBox="0 0 24 24"><path d="M12 3v18M5 8l7-5 7 5"/></svg></div><h3>Crecimiento personal</h3><p>Claridad para decidir y avanzar hacia lo que quieres.</p></div>
+      <div class="area reveal"><div class="ico-w"><svg viewBox="0 0 24 24"><path d="M12 2a10 10 0 100 20 10 10 0 000-20zm0 6v6l4 2"/></svg></div><h3>Momentos de cambio</h3><p>Acompañamiento en etapas difíciles o transiciones de vida.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="block proceso" id="proceso">
+  <div class="wrap">
+    <div class="head reveal"><span class="eyebrow">El proceso</span><h2>Tu camino, paso a paso</h2><p>La terapia no es una receta. Es un recorrido que hacemos juntos, con calma.</p></div>
+    <div class="path-wrap" id="pathWrap">
+      <svg class="path-svg" id="pathSvg" viewBox="0 0 120 1000" preserveAspectRatio="none">
+        <path id="theLine" d="M60 0 C 10 130, 110 230, 60 360 S 10 590, 60 700 S 110 880, 60 1000" />
+      </svg>
+      <div class="milestones">
+        <div class="ms reveal"><div class="card"><div class="num">Primer encuentro</div><h3>Nos conocemos</h3><p>Una primera sesión para que me cuentes qué te trae y veamos si nos hace sentido trabajar juntos.</p></div><div class="dot"></div></div>
+        <div class="ms reveal"><div class="card"><div class="num">Entendiendo</div><h3>Miramos juntos</h3><p>Exploramos lo que sientes y le ponemos palabras, sin apuros ni juicios.</p></div><div class="dot"></div></div>
+        <div class="ms reveal"><div class="card"><div class="num">En movimiento</div><h3>Construimos herramientas</h3><p>Trabajamos recursos concretos para tu día a día y vamos viendo avances.</p></div><div class="dot"></div></div>
+        <div class="ms reveal"><div class="card"><div class="num">Tu autonomía</div><h3>Caminas con más fuerza</h3><p>El objetivo siempre eres tú: que salgas con más claridad y confianza propia.</p></div><div class="dot"></div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="block" id="sobre">
+  <div class="wrap about">
+    <div class="about-img reveal"><svg viewBox="0 0 24 24" fill="#5F6E4B" opacity=".75"><path d="M12 12a5 5 0 100-10 5 5 0 000 10zm0 2c-5 0-9 2.5-9 6v2h18v-2c0-3.5-4-6-9-6z"/></svg></div>
+    <div class="about-copy reveal">
+      <span class="eyebrow">Sobre mí</span>
+      <h2>Hola, soy [Nombre], psicóloga clínica</h2>
+      <p>Hace más de diez años acompaño a personas a reencontrarse consigo mismas. Mi forma de trabajar es cálida y cercana: creo que sanar pasa por sentirse en confianza.</p>
+      <p>Trabajo desde un enfoque integrativo, adaptándome a lo que cada persona necesita en cada momento.</p>
+      <div class="creds"><span>Psicóloga clínica</span><span>Terapia online y presencial</span><span>+10 años de experiencia</span></div>
+    </div>
+  </div>
+</section>
+
+<section class="block" style="padding-top:0">
+  <div class="wrap">
+    <div class="head reveal"><span class="eyebrow">Quienes han pasado por aquí</span><h2>Lo que cuentan mis pacientes</h2></div>
+    <div class="quotes">
+      <div class="q reveal"><p>"Por primera vez sentí que alguien me escuchaba de verdad, sin juzgarme."</p><span class="who">Paciente, 34 años</span></div>
+      <div class="q reveal"><p>"Llegué muy perdida y me fui con herramientas para mi día a día. Lo agradezco enormemente."</p><span class="who">Paciente, 28 años</span></div>
+      <div class="q reveal"><p>"Un espacio tranquilo y seguro. Cambió mi manera de relacionarme conmigo misma."</p><span class="who">Paciente, 41 años</span></div>
+    </div>
+  </div>
+</section>
+
+<section class="block" id="contacto" style="padding-top:0">
+  <div class="wrap narrow">
+    <div class="cta reveal">
+      <h2>Dar el primer paso ya es avanzar</h2>
+      <p>Escríbeme y agendemos tu primera sesión, sin compromiso.</p>
+      <a class="btn btn-wa" style="background:#fff;color:var(--sage-d)" href="https://api.whatsapp.com/send/?phone=56973539350&text=Hola%2C%20quiero%20agendar%20una%20sesi%C3%B3n" target="_blank" rel="noopener">
+        <svg class="ico" viewBox="0 0 24 24" style="fill:var(--sage-d)"><path d="M.057 24l1.687-6.163a11.867 11.867 0 01-1.587-5.946C.16 5.335 5.495 0 12.05 0a11.82 11.82 0 018.413 3.488 11.82 11.82 0 013.48 8.414c-.003 6.557-5.338 11.892-11.893 11.892a11.9 11.9 0 01-5.688-1.448L.057 24zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884a9.86 9.86 0 001.51 5.26l-.999 3.648 3.788-.607zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/></svg>
+        Escríbeme por WhatsApp
+      </a>
+    </div>
+  </div>
+</section>
+
+<footer class="foot">
+  <div class="wrap foot-in">
+    <div><div class="logo"><span class="leaf"></span>Sendero</div><p>Psicología con calma y cercanía. Un espacio para volver a ti.</p></div>
+    <div><h4>Atención</h4><p>Online y presencial</p><p>Lun a Vie · horario a convenir</p></div>
+    <div><h4>Contacto</h4><p>WhatsApp +56 9 0000 0000</p><p>hola@senderopsicologia.cl</p></div>
+  </div>
+  <div class="wrap foot-bottom">Plantilla de demostración creada por Triax Computación · Textos de ejemplo.</div>
+</footer>
+
+<a class="wa-float" href="https://api.whatsapp.com/send/?phone=56973539350&text=Hola%2C%20vi%20la%20plantilla%20de%20psicolog%C3%ADa%20y%20quiero%20una%20web%20as%C3%AD" target="_blank" rel="noopener" aria-label="WhatsApp">
+  <svg viewBox="0 0 24 24"><path d="M.057 24l1.687-6.163a11.867 11.867 0 01-1.587-5.946C.16 5.335 5.495 0 12.05 0a11.82 11.82 0 018.413 3.488 11.82 11.82 0 013.48 8.414c-.003 6.557-5.338 11.892-11.893 11.892a11.9 11.9 0 01-5.688-1.448L.057 24zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884a9.86 9.86 0 001.51 5.26l-.999 3.648 3.788-.607zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/></svg>
+</a>
+
+<script>
+(function(){
+  var reduce=window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var burger=document.getElementById('burger'), menu=document.getElementById('menu');
+  if(burger){burger.addEventListener('click',function(){menu.classList.toggle('open')});
+    menu.querySelectorAll('a').forEach(function(a){a.addEventListener('click',function(){menu.classList.remove('open')})});}
+
+  if('IntersectionObserver' in window && !reduce){
+    var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target);}})},{threshold:.15});
+    document.querySelectorAll('.reveal').forEach(function(el){io.observe(el)});
+  } else { document.querySelectorAll('.reveal').forEach(function(el){el.classList.add('in')}); }
+
+  // CAMINO SVG que se dibuja según el scroll
+  var line=document.getElementById('theLine'), wrap=document.getElementById('pathWrap');
+  if(line && wrap && !reduce){
+    var len=line.getTotalLength();
+    line.style.strokeDasharray=len; line.style.strokeDashoffset=len;
+    function draw(){
+      var r=wrap.getBoundingClientRect(), vh=window.innerHeight;
+      var total=r.height+vh*0.6;
+      var p=Math.min(Math.max((vh*0.8 - r.top)/total,0),1);
+      line.style.strokeDashoffset=len*(1-p);
+    }
+    draw();
+    window.addEventListener('scroll',function(){requestAnimationFrame(draw);},{passive:true});
+    window.addEventListener('resize',draw);
+  } else if(line){ line.style.strokeDasharray='none'; }
+})();
+</script>
+</body>
+</html>

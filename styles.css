@@ -132,15 +132,15 @@ h1,h2,h3,h4{font-family:var(--font-head);color:var(--white);line-height:1.18;fon
   background:rgba(2,8,23,.72);backdrop-filter:saturate(160%) blur(14px);
   border-bottom:1px solid var(--line);
 }
-.header-inner{display:flex;align-items:center;justify-content:space-between;height:72px}
-.brand{display:flex;align-items:baseline;gap:9px}
+.header-inner{display:flex;align-items:center;justify-content:space-between;height:72px;gap:30px}
+.brand{display:flex;align-items:baseline;gap:9px;flex:none}
 .brand-logo{height:38px;width:auto}
 .brand-sub{
   font-family:var(--font-head);font-weight:700;font-size:.78rem;
   letter-spacing:.14em;text-transform:uppercase;color:var(--blue);
 }
-.nav{display:flex;align-items:center;gap:26px}
-.nav a{font-family:var(--font-head);font-weight:600;font-size:.95rem;color:var(--text);transition:color .15s}
+.nav{display:flex;align-items:center;gap:22px;flex-wrap:nowrap}
+.nav a{font-family:var(--font-head);font-weight:600;font-size:.95rem;color:var(--text);transition:color .15s;white-space:nowrap}
 .nav a:hover{color:var(--cyan)}
 .nav .nav-wa{color:#06240F}
 .nav .nav-wa:hover{color:#fff}
@@ -467,7 +467,7 @@ h1,h2,h3,h4{font-family:var(--font-head);color:var(--white);line-height:1.18;fon
   .footer-inner{grid-template-columns:1fr 1fr;gap:28px}
   .reveal-grid{display:none}
 }
-@media (max-width:680px){
+@media (max-width:1100px){
   .nav-toggle{display:flex}
   .nav{
     position:absolute;top:72px;left:0;right:0;
